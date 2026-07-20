@@ -266,29 +266,92 @@
       font-size: 0.92rem;
     }
 
-    .compliance-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin-top: 22px;
-      padding-top: 18px;
+    .affiliations {
+      margin-top: 24px;
+      padding-top: 20px;
       border-top: 1px solid rgba(80, 79, 87, 0.14);
-      color: #77757c;
-      font-size: 0.74rem;
-      line-height: 1.45;
+    }
+
+    .affiliations-title {
+      margin: 0 0 14px;
+      color: var(--cool-grey);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .affiliations-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .affiliation-item {
+      min-height: 76px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 6px;
+      border: 1px solid rgba(80, 79, 87, 0.14);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--cool-grey);
+      text-align: center;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .affiliation-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      color: var(--bronze);
+    }
+
+    .affiliation-logo {
+      display: block;
+      max-width: 58px;
+      max-height: 44px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .affiliation-mark {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .affiliation-name {
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      text-transform: uppercase;
     }
 
     .equal-housing-logo {
-      width: 54px;
-      height: auto;
-      flex: 0 0 auto;
-      display: block;
+      max-width: 54px;
+      max-height: 44px;
+    }
+
+    .compliance-footer {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(80, 79, 87, 0.14);
+      color: #77757c;
+      font-size: 0.72rem;
+      line-height: 1.45;
+      text-align: center;
     }
 
     .compliance-copy {
       margin: 0;
-      text-align: right;
     }
 
     @keyframes rise {
@@ -335,8 +398,8 @@
         width: 78px;
       }
 
-      .compliance-footer {
-        align-items: flex-end;
+      .affiliations-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -441,14 +504,49 @@
           </p>
         </div>
 
+        <section class="affiliations" aria-labelledby="affiliations-heading">
+          <h2 class="affiliations-title" id="affiliations-heading">
+            Professional Affiliations
+          </h2>
+
+          <div class="affiliations-grid">
+            <div class="affiliation-item" aria-label="REALTOR member">
+              <img
+                class="affiliation-logo"
+                src="realtor-logo.png"
+                alt="REALTOR logo"
+              />
+            </div>
+
+            <div class="affiliation-item" aria-label="San Diego Association of REALTORS">
+              <span class="affiliation-mark">SDAR</span>
+              <span class="affiliation-name">San Diego Association<br />of REALTORS®</span>
+            </div>
+
+            <div class="affiliation-item" aria-label="California Association of REALTORS">
+              <span class="affiliation-mark">C.A.R.</span>
+              <span class="affiliation-name">California Association<br />of REALTORS®</span>
+            </div>
+
+            <div class="affiliation-item" aria-label="National Association of REALTORS">
+              <span class="affiliation-mark">NAR</span>
+              <span class="affiliation-name">National Association<br />of REALTORS®</span>
+            </div>
+
+            <div class="affiliation-item" aria-label="Equal Housing Opportunity">
+              <img
+                class="affiliation-logo equal-housing-logo"
+                src="equal-housing-logo.png"
+                alt="Equal Housing Opportunity logo"
+              />
+            </div>
+          </div>
+        </section>
+
         <footer class="compliance-footer">
-          <img
-            class="equal-housing-logo"
-            src="equal-housing-logo.png"
-            alt="Equal Housing Opportunity"
-          />
           <p class="compliance-copy">
             Oskar Burman · California DRE #02076775<br />
+            PROPR Real Estate Inc. · California DRE #02138763<br />
             © 2026 PROPR Real Estate Inc.
           </p>
         </footer>
