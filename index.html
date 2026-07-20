@@ -142,6 +142,15 @@
       font-size: 0.98rem;
     }
 
+    .trust-line {
+      margin: 14px 0 0;
+      color: var(--bronze);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
     .contact-list {
       display: grid;
       gap: 12px;
@@ -201,7 +210,7 @@
 
     .actions {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 26px;
     }
@@ -494,6 +503,8 @@
           responsive service and long-term value.
         </p>
 
+        <p class="trust-line">Managing Properties. Building Trust.</p>
+
         <div class="contact-list">
           <a class="contact-link" href="tel:+16199522346">
             <span class="icon" aria-hidden="true">P</span>
@@ -529,13 +540,16 @@
           <a class="button button-primary" href="oskar-burman.vcf" download>
             Save Contact
           </a>
+          <a class="button button-secondary" href="portfolio.html">
+            View Portfolio
+          </a>
           <a
             class="button button-secondary"
             href="https://propr-re.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Visit PROPR Real Estate
+            Visit PROPR
           </a>
         </div>
 
