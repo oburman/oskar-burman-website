@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Oskar Burman, Multifamily Manager and REALTOR® with PROPR Real Estate Inc." />
+  <meta name="theme-color" content="#504f57" />
+  <title>Oskar Burman | Multifamily Manager & REALTOR®</title>
+
+  <style>
+    :root {
+      --cool-grey: #504f57;
+      --bronze: #b27f3a;
+      --gold: #d6a45b;
+      --white: #ffffff;
+      --soft-white: #f8f7f4;
+      --text: #2f2e33;
+      --shadow: 0 24px 60px rgba(31, 30, 35, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214, 164, 91, 0.16), transparent 34rem),
+        linear-gradient(135deg, var(--soft-white), var(--white));
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 18px;
+    }
+
+    .contact-card {
+      width: min(100%, 980px);
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      animation: rise 700ms ease-out both;
+    }
+
+    .photo-panel {
+      position: relative;
+      min-height: 620px;
+      background: var(--cool-grey);
+    }
+
+    .photo-panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(42, 41, 47, 0.48), transparent 52%);
+      pointer-events: none;
+    }
+
+    .headshot {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .details-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 58px;
+      border-top: 8px solid var(--gold);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--bronze);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--cool-grey);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.75rem, 7vw, 4.8rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+    }
+
+    .title {
+      margin: 18px 0 0;
+      color: var(--cool-grey);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      margin: 30px 0 0;
+      padding-left: 18px;
+      border-left: 3px solid var(--gold);
+      color: var(--cool-grey);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+      line-height: 1.3;
+    }
+
+    .subtext {
+      margin: 18px 0 0;
+      max-width: 34rem;
+      color: #66656c;
+      font-size: 0.98rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin: 34px 0 0;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 52px;
+      padding: 12px 14px;
+      border: 1px solid rgba(80, 79, 87, 0.16);
+      border-radius: 14px;
+      color: var(--cool-grey);
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .contact-link:hover,
+    .contact-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      background: rgba(214, 164, 91, 0.08);
+      outline: none;
+    }
+
+    .icon {
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      flex: 0 0 32px;
+      border-radius: 50%;
+      background: var(--cool-grey);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .link-label {
+      display: block;
+      color: #77757c;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .link-value {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 13px 18px;
+      border: 1px solid var(--bronze);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .button-primary {
+      background: var(--bronze);
+      color: var(--white);
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      background: var(--gold);
+    }
+
+    .button-secondary {
+      color: var(--bronze);
+      background: transparent;
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      background: rgba(178, 127, 58, 0.08);
+    }
+
+    .brokerage-card {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 2px solid var(--bronze);
+    }
+
+    .brokerage-logo {
+      width: 92px;
+      height: auto;
+      display: block;
+    }
+
+    .brokerage-copy {
+      margin: 0;
+      color: #706f75;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .brokerage-copy strong {
+      color: var(--cool-grey);
+      font-size: 0.92rem;
+    }
+
+    .compliance-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(80, 79, 87, 0.14);
+      color: #77757c;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .equal-housing-logo {
+      width: 54px;
+      height: auto;
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    .compliance-copy {
+      margin: 0;
+      text-align: right;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 780px) {
+      .page-shell {
+        padding: 0;
+      }
+
+      .contact-card {
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        border-radius: 0;
+      }
+
+      .photo-panel {
+        min-height: 48vh;
+        max-height: 560px;
+      }
+
+      .details-panel {
+        padding: 42px 24px 46px;
+        border-top-width: 6px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr;
+      }
+
+      .brokerage-card {
+        grid-template-columns: 78px 1fr;
+      }
+
+      .brokerage-logo {
+        width: 78px;
+      }
+
+      .compliance-footer {
+        align-items: flex-end;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="contact-card" aria-label="Oskar Burman contact information">
+      <div class="photo-panel">
+        <img
+          class="headshot"
+          src="oskar-burman-headshot.jpg"
+          alt="Professional headshot of Oskar Burman"
+        />
+      </div>
+
+      <div class="details-panel">
+        <p class="eyebrow">PROPR Real Estate Inc.</p>
+        <h1>Oskar Burman</h1>
+        <p class="title">Multifamily Manager | REALTOR®</p>
+
+        <p class="tagline">
+          Helping apartment owners protect, improve and grow their investments.
+        </p>
+
+        <p class="subtext">
+          Professional multifamily management focused on clear communication,
+          responsive service and long-term value.
+        </p>
+
+        <div class="contact-list">
+          <a class="contact-link" href="tel:+16199522346">
+            <span class="icon" aria-hidden="true">P</span>
+            <span>
+              <span class="link-label">Phone</span>
+              <span class="link-value">(619) 952-2346</span>
+            </span>
+          </a>
+
+          <a class="contact-link" href="mailto:Oskar@propr-re.com">
+            <span class="icon" aria-hidden="true">E</span>
+            <span>
+              <span class="link-label">Email</span>
+              <span class="link-value">Oskar@propr-re.com</span>
+            </span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/oskar-burman-624335138/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="icon" aria-hidden="true">in</span>
+            <span>
+              <span class="link-label">LinkedIn</span>
+              <span class="link-value">Connect with Oskar</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="actions">
+          <a class="button button-primary" href="oskar-burman.vcf" download>
+            Add Oskar to Contacts
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://propr-re.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit PROPR Real Estate
+          </a>
+        </div>
+
+        <div class="brokerage-card" aria-label="Brokerage information">
+          <a
+            href="https://propr-re.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit PROPR Real Estate Inc."
+          >
+            <img
+              class="brokerage-logo"
+              src="propr-logo.png"
+              alt="PROPR Real Estate Inc. logo"
+            />
+          </a>
+
+          <p class="brokerage-copy">
+            <strong>PROPR Real Estate Inc.</strong><br />
+            California DRE #02138763<br />
+            San Diego, California
+          </p>
+        </div>
+
+        <footer class="compliance-footer">
+          <img
+            class="equal-housing-logo"
+            src="equal-housing-logo.png"
+            alt="Equal Housing Opportunity"
+          />
+          <p class="compliance-copy">
+            Oskar Burman · California DRE #02076775<br />
+            © 2026 PROPR Real Estate Inc.
+          </p>
+        </footer>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
