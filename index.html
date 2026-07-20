@@ -238,16 +238,57 @@
       background: rgba(178, 127, 58, 0.08);
     }
 
-    .brokerage {
+    .brokerage-card {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 18px;
+      align-items: center;
       margin-top: 30px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(80, 79, 87, 0.14);
-      color: #706f75;
-      font-size: 0.85rem;
+      padding-top: 24px;
+      border-top: 2px solid var(--bronze);
     }
 
-    .brokerage strong {
+    .brokerage-logo {
+      width: 92px;
+      height: auto;
+      display: block;
+    }
+
+    .brokerage-copy {
+      margin: 0;
+      color: #706f75;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+
+    .brokerage-copy strong {
       color: var(--cool-grey);
+      font-size: 0.92rem;
+    }
+
+    .compliance-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(80, 79, 87, 0.14);
+      color: #77757c;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .equal-housing-logo {
+      width: 54px;
+      height: auto;
+      flex: 0 0 auto;
+      display: block;
+    }
+
+    .compliance-copy {
+      margin: 0;
+      text-align: right;
     }
 
     @keyframes rise {
@@ -284,6 +325,18 @@
 
       .actions {
         grid-template-columns: 1fr;
+      }
+
+      .brokerage-card {
+        grid-template-columns: 78px 1fr;
+      }
+
+      .brokerage-logo {
+        width: 78px;
+      }
+
+      .compliance-footer {
+        align-items: flex-end;
       }
     }
 
@@ -367,10 +420,38 @@
           </a>
         </div>
 
-        <p class="brokerage">
-          <strong>PROPR Real Estate Inc.</strong><br />
-          San Diego, California
-        </p>
+        <div class="brokerage-card" aria-label="Brokerage information">
+          <a
+            href="https://propr-re.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit PROPR Real Estate Inc."
+          >
+            <img
+              class="brokerage-logo"
+              src="propr-logo.png"
+              alt="PROPR Real Estate Inc. logo"
+            />
+          </a>
+
+          <p class="brokerage-copy">
+            <strong>PROPR Real Estate Inc.</strong><br />
+            California DRE #02138763<br />
+            San Diego, California
+          </p>
+        </div>
+
+        <footer class="compliance-footer">
+          <img
+            class="equal-housing-logo"
+            src="equal-housing-logo.png"
+            alt="Equal Housing Opportunity"
+          />
+          <p class="compliance-copy">
+            Oskar Burman · California DRE #02076775<br />
+            © 2026 PROPR Real Estate Inc.
+          </p>
+        </footer>
       </div>
     </section>
   </main>
