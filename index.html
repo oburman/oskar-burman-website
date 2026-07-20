@@ -116,6 +116,15 @@
       letter-spacing: 0.04em;
     }
 
+    .license-number {
+      margin: 7px 0 0;
+      color: rgba(80, 79, 87, 0.76);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .tagline {
       margin: 30px 0 0;
       padding-left: 18px;
@@ -354,6 +363,10 @@
       margin: 0;
     }
 
+    .mobile-action-bar {
+      display: none;
+    }
+
     @keyframes rise {
       from {
         opacity: 0;
@@ -382,7 +395,7 @@
       }
 
       .details-panel {
-        padding: 42px 24px 46px;
+        padding: 42px 24px 116px;
         border-top-width: 6px;
       }
 
@@ -400,6 +413,48 @@
 
       .affiliations-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .mobile-action-bar {
+        position: fixed;
+        z-index: 1000;
+        left: 12px;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid rgba(80, 79, 87, 0.14);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 12px 34px rgba(31, 30, 35, 0.22);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      .mobile-action {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 14px;
+        border: 1px solid var(--bronze);
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .mobile-action-call {
+        color: var(--bronze);
+        background: var(--white);
+      }
+
+      .mobile-action-save {
+        color: var(--white);
+        background: var(--bronze);
       }
     }
 
@@ -428,6 +483,7 @@
         <p class="eyebrow">PROPR Real Estate Inc.</p>
         <h1>Oskar Burman</h1>
         <p class="title">Multifamily Manager | REALTOR®</p>
+        <p class="license-number">California DRE #02076775</p>
 
         <p class="tagline">
           Helping apartment owners protect, improve and grow their investments.
@@ -471,7 +527,7 @@
 
         <div class="actions">
           <a class="button button-primary" href="oskar-burman.vcf" download>
-            Add Oskar to Contacts
+            Save Contact
           </a>
           <a
             class="button button-secondary"
@@ -553,5 +609,16 @@
       </div>
     </section>
   </main>
+
+  <nav class="mobile-action-bar" aria-label="Quick contact actions">
+    <a class="mobile-action mobile-action-call" href="tel:+16199522346">
+      <span aria-hidden="true">☎</span>
+      Call Oskar
+    </a>
+    <a class="mobile-action mobile-action-save" href="oskar-burman.vcf" download>
+      <span aria-hidden="true">＋</span>
+      Save Contact
+    </a>
+  </nav>
 </body>
 </html>
